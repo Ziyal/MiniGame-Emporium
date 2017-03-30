@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mini-Game Emporium</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" />
+  </head>
+  <body>
+  <h1>Welcome to the Mini-Game Emporium!</h1>
+  <form class="navbutton-form" action="{% url 'madlibs:index' %}" method="POST">
+    {% csrf_token %}
+    <input class="navbutton" type="submit" value="MadLibs">
+  </form>
+  <form class="navbutton-form" action="{% url 'hangman:index' %}" method="POST">
+    {% csrf_token %}
+    <input class="navbutton" type="submit" value="Hangman">
+  </form>
+  </body>
+</html>

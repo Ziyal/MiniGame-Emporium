@@ -1,0 +1,124 @@
+* {
+  font-family: helvetica;
+}
+body {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#madlibs-form {
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  width: 310px;
+  /*margin-left: 620px;*/
+}
+
+.form_title {
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+#submit-container {
+  display: inline-block;
+  text-align: center;
+  margin-right: 70px;
+}
+
+input {
+  display: inline-block;
+  text-align: right;
+}
+
+label {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.message {
+  color: red;
+  font-weight: bold;
+}
+
+.keyword {
+  font-weight: bold;
+}
+
+#text_container {
+  width: 500px;
+  display: inline-block;
+  text-align: center;
+  /*margin-left: 500px;*/
+}
+
+.paragraph {
+  line-height: 2;
+  text-align: left;
+}
+
+.errors {
+  text-align: center;
+}
+
+input[type=text]:focus {
+    border: 3px solid #d1d1d1;
+    outline: none;
+}
+
+.submit-button {
+background-color: #8dd17f;
+color: black;
+border: none;
+padding: 12px 25px;
+text-decoration: none;
+margin: 2px 2px;
+cursor: pointer;
+text-align: center;
+display: inline-block;
+margin-bottom: 40px;
+margin-right: 10px;
+}
+
+input, textarea, select, button {
+  width : 150px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+
+.submit-button:hover {
+  background-color: #88c47b;
+}
+
+#navbutton-container {
+  text-align: center;
+}
+
+.navbutton {
+  border-radius: 20px;
+  border: grey;
+  height: 25px;
+  padding-top: 4px;
+  font-weight: bolder;
+  display: inline-block;
+  text-align: center;
+  width: 85px;
+  text-transform: uppercase;
+}
+
+.navbutton:hover {
+  background-color: #e5e5e5;
+}
+
+.navbutton-form {
+  display: inline-block;
+}

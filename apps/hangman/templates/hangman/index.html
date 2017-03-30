@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hangman</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hangman/css/style.css' %}"/>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header-container"><h1>Hangman</h1></div>
+
+      <div id="left-container">
+        <h4>Attempts:</h4>
+          <span class="output">{{request.session.attempts}}</span>
+
+        <h4>Letters Guessed:</h4>
+          {% for i in request.session.guesses %}
+          <span class="output">{{i}}</span>
+          {% endfor %}
+
+        <br><br><br>
+        {% if messages %}
+        {% for message in messages %}
+        <p class="message">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+
+      </div>
+      <div id="right-container">
+        <h4 class="word-to-guess">Word to Guess:</h4><span class="guess">
+        {% for i in request.session.word %}
+        {{i}}
+        {% endfor %}</span>
+
+        {% if request.session.status %}
+        <h3>Yay, you won!</h3>
+
+        <form action="{% url 'hangman:reset' %}" method="POST">
+          {% csrf_token %}
+          <input class="reset_button" type="submit" value="Play Again">
+        </form>
+
+        {% elif request.session.attempts >= 12 %}
+        <h3>Game Over!</h3>
+        <h5>The word was: {% for i in request.session.random_word %}{{i}}{% endfor %}</h5>
+
+        <form action="{% url 'hangman:reset' %}" method="POST">
+          {% csrf_token %}
+          <input class="reset_button" type="submit" value="Play Again">
+        </form>
+        {% else %}
+
+          <form action="{% url 'hangman:guess_letter' %}" method="POST">
+            {% csrf_token %}
+            <input class="guess_input" type="text" name="guess_letter"><br>
+            <input class="submit_button" type="submit" value="Make a Guess!">
+          </form><br>
+
+          <form action="{% url 'hangman:reset' %}" method="POST">
+            {% csrf_token %}
+            <input class="reset_button" type="submit" value="Reset">
+          </form>
+        {% endif %}
+        <br><br>
+      </div>
+      <form class="navbutton-form" action="{% url 'home:index' %}" method="POST">
+        {% csrf_token %}
+        <input class="navbutton" type="submit" value="Home">
+      </form>
+    </div>
+  </body>
+</html>

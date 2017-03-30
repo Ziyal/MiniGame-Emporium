@@ -1,0 +1,21 @@
+* {
+  font-family: helvetica;
+}
+
+body {
+  text-align: center;
+}
+
+.navbutton {
+  border-radius: 20px;
+  border: grey;
+  height: 25px;
+  padding-top: 4px;
+  font-weight: bolder;
+  display: inline-block;
+  text-align: center;
+  width: 85px;
+  text-transform: uppercase;
+  margin-left: 10px;
+  margin-right: 10px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MadLibs</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'madlibs/css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Vacation MadLibs</h1>
+    <div id="madlibs-form">
+      <form action="{% url 'madlibs:process' %}" method="POST">
+        {% csrf_token %}
+        <h6 class="form_title">Adjetive: </h6> <input type="text" name="value1" value="{{request.session.data.value1}}"><br>
+        <h6 class="form_title">Adjetive: </h6> <input type="text" name="value2" value="{{request.session.data.value2}}"><br>
+        <h6 class="form_title">Noun: </h6> <input type="text" name="value3" value="{{request.session.data.value3}}"><br>
+        <h6 class="form_title">Noun: </h6> <input type="text" name="value4" value="{{request.session.data.value4}}"><br>
+        <h6 class="form_title">Plural Noun: </h6> <input type="text" name="value5" value="{{request.session.data.value5}}"><br>
+        <h6 class="form_title">Game: </h6> <input type="text" name="value6" value="{{request.session.data.value6}}"><br>
+        <h6 class="form_title">Plural Noun: </h6> <input type="text" name="value7" value="{{request.session.data.value7}}"><br>
+        <h6 class="form_title">Verb ending in "ing": </h6> <input type="text" name="value9" value="{{request.session.data.value8}}"><br>
+        <h6 class="form_title">Verb ending in "ing": </h6> <input type="text" name="value8" value="{{request.session.data.value9}}"><br>
+        <h6 class="form_title">Plural Noun: </h6> <input type="text" name="value10" value="{{request.session.data.value10}}"><br>
+        <h6 class="form_title">Verb ending in "ing": </h6> <input type="text" name="value11" value="{{request.session.data.value11}}"><br>
+        <h6 class="form_title">Noun: </h6> <input type="text" name="value12" value="{{request.session.data.value12}}"><br>
+        <h6 class="form_title">Plant: </h6> <input type="text" name="value13" value="{{request.session.data.value13}}"><br>
+        <h6 class="form_title">Part of the body: </h6> <input type="text" name="value14" value="{{request.session.data.value14}}"><br>
+        <h6 class="form_title">A Place: </h6> <input type="text" name="value15" value="{{request.session.data.value15}}"><br>
+        <h6 class="form_title">Verb ending in "ing": </h6> <input type="text" name="value16" value="{{request.session.data.value16}}"><br>
+        <h6 class="form_title">Adjetive: </h6> <input type="text" name="value17" value="{{request.session.data.value17}}"><br>
+        <h6 class="form_title">Number: </h6> <input type="text" name="value18" value="{{request.session.data.value18}}"><br>
+        <h6 class="form_title">Plural Noun: </h6> <input type="text" name="value19" value="{{request.session.data.value19}}"><br>
+        <div class="errors">
+          {% if messages %}
+            {% for message in messages %}
+            <br>
+            <p class="message">**{{message}}**</p>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <br>
+        <div id="submit-container">
+          <input class="submit-button" type="submit" value="Let's MadLib!">
+        </div>
+      </form>
+      <div id="navbutton-container">
+        <form class="navbutton-form" action="{% url 'home:index' %}" method="POST">
+        {% csrf_token %}
+        <input class="navbutton" type="submit" value="Home">
+      </div>
+    </div>
+
+  </body>
+</html>

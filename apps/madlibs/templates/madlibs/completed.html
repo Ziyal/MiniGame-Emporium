@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MadLibs - Vacation</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'madlibs/css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Vacation</h1>
+    <div id='text_container'>
+      <p class="paragraph">A vacation is when you take a trip to some <span class="keyword">{{request.session.data.value1}}</span> place with your <span class="keyword">{{request.session.data.value2}}</span> family. Usually you go to some place that is near a/an <span class="keyword">{{request.session.data.value3}}</span> or up a/an <span class="keyword">{{request.session.data.value4}}</span>. A good vacation place is one where you can ride <span class="keyword">{{request.session.data.value5}}</span> or play <span class="keyword">{{request.session.data.value6}}</span> or go hunting for <span class="keyword">{{request.session.data.value7}}</span>. I like to spend my time <span class="keyword">{{request.session.data.value8}}</span> or <span class="keyword">{{request.session.data.value9}}</span>. When parents go on a vacation, they spend their time eating three <span class="keyword">{{request.session.data.value10}}</span> a day, ad fathers play gold, and mothers sit around <span class="keyword">{{request.session.data.value11}}</span>. Last summer, my little brother fell in a/an <span class="keyword">{{request.session.data.value12}}</span> and got poison <span class="keyword">{{request.session.data.value13}}</span> all over his <span class="keyword">{{request.session.data.value14}}</span>. My family is going to (the) <span class="keyword">{{request.session.data.value15}}</span>, and I will practice <span class="keyword">{{request.session.data.value16}}</span>. Parents need vacations more than kids because parents are always very <span class="keyword">{{request.session.data.value17}}</span> and because they have to work <span class="keyword">{{request.session.data.value18}}</span> hours every day all year making enough <span class="keyword">{{request.session.data.value4}}</span> to pay for the vacation.</p>
+
+    <form class="navbutton-form" action="{% url 'madlibs:clear_session' %}" method="POST">
+      {% csrf_token %}
+      <input class="navbutton" type="submit" value="Back">
+    </form>
+    <form class="navbutton-form" action="{% url 'home:index' %}" method="POST">
+      {% csrf_token %}
+      <input class="navbutton" type="submit" value="Home">
+    </form>
+  </div>
+  </body>
+</html>
