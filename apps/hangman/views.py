@@ -12,7 +12,6 @@ def index(request):
     # selects random word
     word_list = ["monkey", "mouse", "bubble", "hawaii", "basketball", "chocolate", "starship", "platypus", "rainbows", "cheesecake", "banana", "copper", "chimpanzee", "bigfoot", "programmer"]
     number = random.randint(0,14)
-    random_word = word_list[number]
 
     if not len(request.session['random_word']):
         for i in word_list[number]:
@@ -24,7 +23,6 @@ def index(request):
     return render(request, "hangman/index.html")
 
 def guess_letter(request):
-    qty_in_word = 0
 
     # checks for errors in guess
     if not request.POST['guess_letter'].isalpha():
@@ -42,7 +40,7 @@ def guess_letter(request):
             for i in range(len(request.session['random_word'])):
                 if request.session['random_word'][i] == request.POST['guess_letter']:
                     request.session['word'][i] = request.session['random_word'][i]
-                    qty_in_word+=1
+
                     if request.session['word'] == request.session['random_word']:
                             request.session['status'] = True
 
