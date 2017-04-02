@@ -23,7 +23,6 @@ def index(request):
     return render(request, "hangman/index.html")
 
 def guess_letter(request):
-
     # checks for errors in guess
     if not request.POST['guess_letter'].isalpha():
         messages.warning(request, "Letters only")
@@ -43,8 +42,6 @@ def guess_letter(request):
 
                     if request.session['word'] == request.session['random_word']:
                             request.session['status'] = True
-
-                        # messages.warning(request, "Hooray, you won!")
         else:
             messages.warning(request, "Try again")
     return redirect('hangman:index')
