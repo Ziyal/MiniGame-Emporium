@@ -6,9 +6,9 @@ __Built With:__
   * Python / Django
   * HTML/CSS
 
-![Hangman](https://github.com/Ziyal/MiniGame-Emporium/blob/master/Screenshots/hangman.png "Hangman")
+![Hangman](https://github.com/Ziyal/MiniGame-Emporium/blob/master/screenshots/hangman.png "Hangman")
 
-![Madlibs](https://github.com/Ziyal/MiniGame-Emporium/blob/master/Screenshots/madlibs1.png "Madlibs")
+![Madlibs](https://github.com/Ziyal/MiniGame-Emporium/blob/master/screenshots/madlibs1.png "Madlibs")
 
-![Madlibs](https://github.com/Ziyal/MiniGame-Emporium/blob/master/Screenshots/madlibs2.png "Madlibs")
+![Madlibs](https://github.com/Ziyal/MiniGame-Emporium/blob/master/screenshots/madlibs2.png "Madlibs")
 
